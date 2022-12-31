@@ -34,7 +34,13 @@ def get_german_power():
     The forms of power include Wind, Solar, and 'wind plus solar' contrasted with the power consumption
     of the country
     '''
+    df = acquire_german_power()
+    df = german_power_columns(df)
+    df = set_index(df, 'date')
 
+    return df
+
+    
 
 ########################################################
 #######     Simulated Store Data Functions       #######
@@ -93,12 +99,7 @@ def prep_store_data(df):
 #######     German Green Energy DataFrame        #######
 ########################################################
 
-def get_german_power():
-    df = acquire_german_power()
-    df = german_power_columns(df)
-    df = set_index(df, 'date')
 
-    return df
 
 
 
